@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
-    <head>
-            <!-- COMMON TAGS -->
+
+<head>
+    <!-- COMMON TAGS -->
     <meta charset="utf-8">
     <title>DeluxeMenus Maker</title>
 
@@ -24,37 +25,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    </head>
-    <style>
+</head>
+<style>
     pre {
-    background-color: #f5f5f5;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 800px;
-    height: 100%;
-}
-        p {
-    margin: 0 0 10px;
-}
-        .boxes {
-            height: 500px;
-            overflow: scroll;
-            width: 400px;
-            display: inline-block;
-  padding: 8px;
-  border: 3px solid #FCB326;
-  border-radius: 6px;
-  box-shadow:
-    0 2px 1px rgba(0, 0, 0, 0.2), 
-    inset 0 2px 1px rgba(0, 0, 0, 0.2);
-        }
-        select {
-    display: block;
-}
-    </style>
+        background-color: #f5f5f5;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 800px;
+        height: 100%;
+    }
+
+    p {
+        margin: 0 0 10px;
+    }
+
+    .boxes {
+        height: 500px;
+        overflow: scroll;
+        width: 400px;
+        display: inline-block;
+        padding: 8px;
+        border: 3px solid #FCB326;
+        border-radius: 6px;
+        box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2), inset 0 2px 1px rgba(0, 0, 0, 0.2);
+    }
+
+    select {
+        display: block;
+    }
+
+</style>
+
 <body>
-<div id="download" style="float: left; padding-right: 30px;">
-    <pre><code id="yaml">menu_title: '<label id='box1'></label>'
+    <div id="download" style="float: left; padding-right: 30px;">
+        <pre><code id="yaml">menu_title: '<label id='box1'></label>'
 open_command: <label id='box2'></label>
 size: <label id='box3'></label>
 <label id='box4'></label>:
@@ -72,155 +76,154 @@ items:<div id="duplicater">   '<label id='box9'></label>':
     right_click_commands:<label id='box15'>[]</label>  </div><!--
       --></code></pre>
 
-</div>
-<div class="boxes">
-<button id="button" onlick="duplicate()">Add Another Item</button>
-<p>Menu Title</p>
-<input type="text" id='menu_title' placeholder="My Cool GUI"/>
-<br>
-<p>Open Menu Command</p>
-<input type='text' id='open_command' placeholder="coolgui"/>
-<br>
-<p>Menu Size (Factors of 9)</p>
-<input type='number' step="3" id='menu_size' placeholder="9, 18, 27, 36, 45, 54"/>
-<br>
-<p>Menu Type</p>
-<select name="menu_type_select" class="input-field">
+    </div>
+    <div class="boxes">
+        <button id="button" onlick="duplicate()">Add Another Item</button>
+        <p>Menu Title</p>
+        <input type="text" id='menu_title' placeholder="My Cool GUI" />
+        <br>
+        <p>Open Menu Command</p>
+        <input type='text' id='open_command' placeholder="coolgui" />
+        <br>
+        <p>Menu Size (Factors of 9)</p>
+        <input type='number' step="3" id='menu_size' placeholder="9, 18, 27, 36, 45, 54" />
+        <br>
+        <p>Menu Type</p>
+        <select name="menu_type_select" class="input-field">
   <option>Select</option>
   <option>open_requirement</option>
   <option>view_requirement</option>
 </select>
-<br>
-<p>Any Name Here</p>
-<input type='text' id='any_name' placeholder="permission"/>
-<br>
-<p>What type of requirement? (Example: has permission)</p>
-<input type='text' id='requirement_type' placeholder="has permission"/>
-<br>
-<p>What would you like your custom permission node to be?</p>
-<input type='text' id='permission_node' placeholder="open.menu.cool"/>
-<br>
-<p>Deny Commands (You must use the []) <br>
-Options: [player], [console], [commandevent], [message], [openguiment], [connect], and [close].</p>
-<textarea id='deny_commands' style="width: 300px;" placeholder="[message] Sorry!"></textarea>
-<br>
-<p>Which item number is this?</p>
-<input type='text' id='item_number' placeholder="1"/>
-<br>
-<p>What material will this item use?</p>
-<input type='text' id='material_name' placeholder="WOOD"/>
-<br>
-<p>Which slot in the GUI will this use?</p>
-<input type='text' id='slot_number' placeholder="0"/>
-<br>
-<p>What would you like the item's display name to be?</p>
-<input type='text' id='display_name' placeholder="My Cool Wooden Block"/>
-<br>
-<p>Lore</p>
-<textarea id='lore' style="width: 300px;" placeholder="&1My Cool Block"></textarea>
-<br>
-<p>Left Click Commands (You must use the []) <br>
-Options: [player], [console], [commandevent], [message], [openguiment], [connect], and [close].</p>
-<textarea id='left_click_commands' style="width: 300px;" placeholder="[close]"></textarea>
-<br>
-<p>Right Click Commands (You must use the []) <br>
-Options: [player], [console], [commandevent], [message], [openguiment], [connect], and [close].</p>
-<textarea id='right_click_commands' style="width: 300px;" placeholder="[connect] hub"></textarea>
+        <br>
+        <p>Any Name Here</p>
+        <input type='text' id='any_name' placeholder="permission" />
+        <br>
+        <p>What type of requirement? (Example: has permission)</p>
+        <input type='text' id='requirement_type' placeholder="has permission" />
+        <br>
+        <p>What would you like your custom permission node to be?</p>
+        <input type='text' id='permission_node' placeholder="open.menu.cool" />
+        <br>
+        <p>Deny Commands (You must use the []) <br> Options: [player], [console], [commandevent], [message], [openguiment], [connect], and [close].</p>
+        <textarea id='deny_commands' style="width: 300px;" placeholder="[message] Sorry!"></textarea>
+        <br>
+        <p>Which item number is this?</p>
+        <input type='text' id='item_number' placeholder="1" />
+        <br>
+        <p>What material will this item use?</p>
+        <input type='text' id='material_name' placeholder="WOOD" />
+        <br>
+        <p>Which slot in the GUI will this use?</p>
+        <input type='text' id='slot_number' placeholder="0" />
+        <br>
+        <p>What would you like the item's display name to be?</p>
+        <input type='text' id='display_name' placeholder="My Cool Wooden Block" />
+        <br>
+        <p>Lore</p>
+        <textarea id='lore' style="width: 300px;" placeholder="&1My Cool Block"></textarea>
+        <br>
+        <p>Left Click Commands (You must use the []) <br> Options: [player], [console], [commandevent], [message], [openguiment], [connect], and [close].</p>
+        <textarea id='left_click_commands' style="width: 300px;" placeholder="[close]"></textarea>
+        <br>
+        <p>Right Click Commands (You must use the []) <br> Options: [player], [console], [commandevent], [message], [openguiment], [connect], and [close].</p>
+        <textarea id='right_click_commands' style="width: 300px;" placeholder="[connect] hub"></textarea>
     </div>
-<script>
-function makeYAMLList(array, indentAmt) {
-  if(array.length == 0)
-  	return "[]";
-	if(typeof array === "string") {
-  	array = array.split('\n');
-  }
-	var out = '\n';
-  $.each(array, x => {
-  	value = array[x];
-  	out += Array(indentAmt + 1).join(' ') + "- '"+value+"'\n"
-  });
-  return out.substring(0, out.length - 1);
-}
+    <script>
+        function makeYAMLList(array, indentAmt) {
+            if (array.length == 0)
+                return "[]";
+            if (typeof array === "string") {
+                array = array.split('\n');
+            }
+            var out = '\n';
+            $.each(array, x => {
+                value = array[x];
+                out += Array(indentAmt + 1).join(' ') + "- '" + value + "'\n"
+            });
+            return out.substring(0, out.length - 1);
+        }
 
-$('#menu_title').keyup(function(){
-  $('#box1').text($(this).val());
-});
+        $('#menu_title').keyup(function() {
+            $('#box1').text($(this).val());
+        });
 
-$('#open_command').keyup(function(){
-  $('#box2').text($(this).val());
-});
+        $('#open_command').keyup(function() {
+            $('#box2').text($(this).val());
+        });
 
-$('#menu_size').keyup(function(){
-  $('#box3').text($(this).val());
-});
-    
-$(document).ready(
-  function() {
-    $('select[name=menu_type_select]').change(
-      function(){
-        var newText = $('option:selected',this).text();
-        $('#box4').text(newText);
-      }
-      );
-  }
-  );
+        $('#menu_size').keyup(function() {
+            $('#box3').text($(this).val());
+        });
 
-$('#any_name').keyup(function(){
-  $('#box5').text($(this).val());
-});
-    
-$('#requirement_type').keyup(function(){
-  $('#box6').text($(this).val());
-});
-    
-$('#permission_node').keyup(function(){
-  $('#box7').text($(this).val());
-});
-    
-$('#deny_commands').keyup(function(){
-  $('#box8').text(makeYAMLList($(this).val(), 8));
-});
-    
-$('#item_number').keyup(function(){
-  $('#box9').text($(this).val());
-});
-    
-$('#material_name').keyup(function(){
-  $('#box10').text($(this).val());
-});
-    
-$('#slot_number').keyup(function(){
-  $('#box11').text($(this).val());
-});
-    
-$('#display_name').keyup(function(){
-  $('#box12').text($(this).val());
-});
-    
-$('#lore').keyup(function(){
-  $('#box13').text(makeYAMLList($(this).val(), 8));
-});
-    
-$('#left_click_commands').keyup(function(){
-  $('#box14').text(makeYAMLList($(this).val(), 8));
-});
-    
-$('#right_click_commands').keyup(function(){
-  $('#box15').text(makeYAMLList($(this).val(), 8));
-});
+        $(document).ready(
+            function() {
+                $('select[name=menu_type_select]').change(
+                    function() {
+                        var newText = $('option:selected', this).text();
+                        $('#box4').text(newText);
+                    }
+                );
+            }
+        );
 
+        $('#any_name').keyup(function() {
+            $('#box5').text($(this).val());
+        });
 
-var i = 0;
-var original = document.getElementById('duplicater');
-document.getElementById('button').onclick = duplicate;
+        $('#requirement_type').keyup(function() {
+            $('#box6').text($(this).val());
+        });
+
+        $('#permission_node').keyup(function() {
+            $('#box7').text($(this).val());
+        });
+
+        $('#deny_commands').keyup(function() {
+            $('#box8').text(makeYAMLList($(this).val(), 8));
+        });
+
+        $('#item_number').keyup(function() {
+            $('#box9').text($(this).val());
+        });
+
+        $('#material_name').keyup(function() {
+            $('#box10').text($(this).val());
+        });
+
+        $('#slot_number').keyup(function() {
+            $('#box11').text($(this).val());
+        });
+
+        $('#display_name').keyup(function() {
+            $('#box12').text($(this).val());
+        });
+
+        $('#lore').keyup(function() {
+            $('#box13').text(makeYAMLList($(this).val(), 8));
+        });
+
+        $('#left_click_commands').keyup(function() {
+            $('#box14').text(makeYAMLList($(this).val(), 8));
+        });
+
+        $('#right_click_commands').keyup(function() {
+            $('#box15').text(makeYAMLList($(this).val(), 8));
+        });
 
 
-function duplicate() {
-    var clone = original.cloneNode(true); // "deep" clone
-    clone.id = "duplicater" + ++i; // there can only be one element with an ID
-    original.parentNode.appendChild(clone);
-}
-</script>
-    
+        var i = 0;
+        var original = document.getElementById('duplicater');
+        document.getElementById('button').onclick = duplicate;
+
+
+        function duplicate() {
+            var clone = original.cloneNode(true); // "deep" clone
+            clone.id = "duplicater" + ++i; // there can only be one element with an ID
+            original.parentNode.appendChild(clone);
+        }
+
+    </script>
+
 </body>
+
 </html>
