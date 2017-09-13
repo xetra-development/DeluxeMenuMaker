@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -24,7 +23,7 @@
     <meta name="og:type" content="website">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </head>
     <style>
     pre {
@@ -49,6 +48,9 @@
     0 2px 1px rgba(0, 0, 0, 0.2), 
     inset 0 2px 1px rgba(0, 0, 0, 0.2);
         }
+        select {
+    display: block;
+}
     </style>
 <body>
 <div id="download" style="float: left; padding-right: 30px;">
@@ -72,56 +74,59 @@ items:<div id="duplicater">   '<label id='box9'></label>':
 
 </div>
 <div class="boxes">
-<button id="button" onlick="duplicate()">Add another item</button>
+<button id="button" onlick="duplicate()">Add Another Item</button>
 <p>Menu Title</p>
-<input type="text" id='menu_title'/>
+<input type="text" id='menu_title' placeholder="My Cool GUI"/>
 <br>
 <p>Open Menu Command</p>
-<input type='text' id='open_command' />
+<input type='text' id='open_command' placeholder="coolgui"/>
 <br>
 <p>Menu Size (Factors of 9)</p>
-<input type='number' step="3" id='menu_size' />
+<input type='number' step="3" id='menu_size' placeholder="9, 18, 27, 36, 45, 54"/>
 <br>
 <p>Menu Type</p>
-<select name="menu_type_select" id="menu_type_select">
+<select name="menu_type_select" class="input-field">
   <option>Select</option>
   <option>open_requirement</option>
   <option>view_requirement</option>
 </select>
 <br>
 <p>Any Name Here</p>
-<input type='text' id='any_name' />
+<input type='text' id='any_name' placeholder="permission"/>
 <br>
 <p>What type of requirement? (Example: has permission)</p>
-<input type='text' id='requirement_type' />
+<input type='text' id='requirement_type' placeholder="has permission"/>
 <br>
 <p>What would you like your custom permission node to be?</p>
-<input type='text' id='permission_node' />
+<input type='text' id='permission_node' placeholder="open.menu.cool"/>
 <br>
-<p>Deny Commands (You must use the [])</p>
-<textarea id='deny_commands' style="width: 300px;"></textarea>
+<p>Deny Commands (You must use the []) <br>
+Options: [player], [console], [commandevent], [message], [openguiment], [connect], and [close].</p>
+<textarea id='deny_commands' style="width: 300px;" placeholder="[message] Sorry!"></textarea>
 <br>
 <p>Which item number is this?</p>
-<input type='text' id='item_number' />
+<input type='text' id='item_number' placeholder="1"/>
 <br>
 <p>What material will this item use?</p>
-<input type='text' id='material_name' />
+<input type='text' id='material_name' placeholder="WOOD"/>
 <br>
 <p>Which slot in the GUI will this use?</p>
-<input type='text' id='slot_number' />
+<input type='text' id='slot_number' placeholder="0"/>
 <br>
 <p>What would you like the item's display name to be?</p>
-<input type='text' id='display_name' />
+<input type='text' id='display_name' placeholder="My Cool Wooden Block"/>
 <br>
-<p>Lore (You must use the [])</p>
-<textarea id='lore' style="width: 300px;"></textarea>
+<p>Lore</p>
+<textarea id='lore' style="width: 300px;" placeholder="&1My Cool Block"></textarea>
 <br>
-<p>Left Click Commands (You must use the [])</p>
-<textarea id='left_click_commands' style="width: 300px;"></textarea>
+<p>Left Click Commands (You must use the []) <br>
+Options: [player], [console], [commandevent], [message], [openguiment], [connect], and [close].</p>
+<textarea id='left_click_commands' style="width: 300px;" placeholder="[close]"></textarea>
 <br>
-<p>Right Click Commands (You must use the [])</p>
-<textarea id='right_click_commands' style="width: 300px;"></textarea>
-</div>
+<p>Right Click Commands (You must use the []) <br>
+Options: [player], [console], [commandevent], [message], [openguiment], [connect], and [close].</p>
+<textarea id='right_click_commands' style="width: 300px;" placeholder="[connect] hub"></textarea>
+    </div>
 <script>
 function makeYAMLList(array, indentAmt) {
   if(array.length == 0)
@@ -204,22 +209,17 @@ $('#right_click_commands').keyup(function(){
   $('#box15').text(makeYAMLList($(this).val(), 8));
 });
 
-document.getElementById('button').onclick = duplicate;
-
-
-document.getElementById('button').onclick = duplicate;
-
 
 var i = 0;
 var original = document.getElementById('duplicater');
+document.getElementById('button').onclick = duplicate;
+
 
 function duplicate() {
     var clone = original.cloneNode(true); // "deep" clone
-    clone.id = "duplicetor" + ++i; // there can only be one element with an ID
+    clone.id = "duplicater" + ++i; // there can only be one element with an ID
     original.parentNode.appendChild(clone);
 }
-
-
 </script>
     
 </body>
