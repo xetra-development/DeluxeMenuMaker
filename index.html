@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <style>
+    pre {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 1000px;
+    height: 500px;
+}
+        p {
+    margin: 0 0 10px;
+}
+        .boxes {
+            height: 500px;
+            overflow: scroll;
+            width: 400px;
+            display: inline-block;
+  padding: 8px;
+  border: 3px solid #FCB326;
+  border-radius: 6px;
+  box-shadow:
+    0 2px 1px rgba(0, 0, 0, 0.2), 
+    inset 0 2px 1px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+<body>
+<div id="download" style="float: left; padding-right: 30px;">
+    <pre><code id="yaml">menu_title: '<label id='box1'></label>'
+open_command: <label id='box2'></label>
+size: <label id='box3'></label>
+<label id='box4'></label>:
+  requirements:
+    <label id='box5'></label>:
+      type: <label id='box6'></label>
+      permission: <label id='box7'></label>
+      deny_commands:<label id='box8'>[]</label>
+items:
+  '<label id='box9'></label>':
+    material: <label id='box10'></label>
+    slot: <label id='box11'></label>
+    display_name: '<label id='box12'></label>'
+    lore:<label id='box13'>[]</label>
+    left_click_commands:<label id='box14'>[]</label>
+    right_click_commands:<label id='box15'>[]</label>  
+      </code></pre>
+
+</div>
+<div class="boxes">
+<p>Menu Title</p>
+<input type="text" id='menu_title'/>
+<br>
+<p>Open Menu Command</p>
+<input type='text' id='open_command' />
+<br>
+<p>Menu Size (Factors of 9)</p>
+<input type='number' step="3" id='menu_size' />
+<br>
+<p>Menu Type</p>
+<select name="menu_type_select" id="menu_type_select">
+  <option>Select</option>
+  <option>open_requirement</option>
+  <option>view_requirement</option>
+</select>
+<br>
+<p>Any Name Here</p>
+<input type='text' id='any_name' />
+<br>
+<p>What type of requirement? (Example: has permission)</p>
+<input type='text' id='requirement_type' />
+<br>
+<p>What would you like your custom permission node to be?</p>
+<input type='text' id='permission_node' />
+<br>
+<p>Deny Commands (You must use the [])</p>
+<textarea id='deny_commands' style="width: 300px;"></textarea>
+<br>
+<p>Which item number is this?</p>
+<input type='text' id='item_number' />
+<br>
+<p>What material will this item use?</p>
+<input type='text' id='material_name' />
+<br>
+<p>Which slot in the GUI will this use?</p>
+<input type='text' id='slot_number' />
+<br>
+<p>What would you like the item's display name to be?</p>
+<input type='text' id='display_name' />
+<br>
+<p>Lore (You must use the [])</p>
+<textarea id='lore' style="width: 300px;"></textarea>
+<br>
+<p>Left Click Commands (You must use the [])</p>
+<textarea id='left_click_commands' style="width: 300px;"></textarea>
+<br>
+<p>Right Click Commands (You must use the [])</p>
+<textarea id='right_click_commands' style="width: 300px;"></textarea>
+</div>
+<script>
+function makeYAMLList(array, indentAmt) {
+  if(array.length == 0)
+  	return "[]";
+	if(typeof array === "string") {
+  	array = array.split('\n');
+  }
+	var out = '\n';
+  $.each(array, x => {
+  	value = array[x];
+  	out += Array(indentAmt + 1).join(' ') + "- '"+value+"'\n"
+  });
+  return out.substring(0, out.length - 1);
+}
+
+$('#menu_title').keyup(function(){
+  $('#box1').text($(this).val());
+});
+
+$('#open_command').keyup(function(){
+  $('#box2').text($(this).val());
+});
+
+$('#menu_size').keyup(function(){
+  $('#box3').text($(this).val());
+});
+    
+$(document).ready(
+  function() {
+    $('select[name=menu_type_select]').change(
+      function(){
+        var newText = $('option:selected',this).text();
+        $('#box4').text(newText);
+      }
+      );
+  }
+  );
+
+$('#any_name').keyup(function(){
+  $('#box5').text($(this).val());
+});
+    
+$('#requirement_type').keyup(function(){
+  $('#box6').text($(this).val());
+});
+    
+$('#permission_node').keyup(function(){
+  $('#box7').text($(this).val());
+});
+    
+$('#deny_commands').keyup(function(){
+  $('#box8').text(makeYAMLList($(this).val(), 8));
+});
+    
+$('#item_number').keyup(function(){
+  $('#box9').text($(this).val());
+});
+    
+$('#material_name').keyup(function(){
+  $('#box10').text($(this).val());
+});
+    
+$('#slot_number').keyup(function(){
+  $('#box11').text($(this).val());
+});
+    
+$('#display_name').keyup(function(){
+  $('#box12').text($(this).val());
+});
+    
+$('#lore').keyup(function(){
+  $('#box13').text(makeYAMLList($(this).val(), 8));
+});
+    
+$('#left_click_commands').keyup(function(){
+  $('#box14').text(makeYAMLList($(this).val(), 8));
+});
+    
+$('#right_click_commands').keyup(function(){
+  $('#box15').text(makeYAMLList($(this).val(), 8));
+});
+</script>
+    
+</body>
+</html>
