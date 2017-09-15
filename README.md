@@ -1,2 +1,2 @@
 # DeluxeMenuMaker
-Use this Web UI to make your DeluxeMenu menus!
+A Web User-Interface for the plugin DeluxeMenus in order to easily input data and make your in-game menus.
