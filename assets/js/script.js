@@ -1,12 +1,19 @@
+/*
+ *	LOAD
+ */
+var editor = ace.edit("output");
+editor.setTheme("ace/theme/chrome");
+editor.getSession().setMode("ace/mode/yaml");
+editor.setShowPrintMargin(false);
+editor.setReadOnly(true);
+editor.$blockScrolling = Infinity;
+editor.setValue($("pre code").text());
 
 /*
  *	EVENTS
  */
-$("#showMenu").click(function() {
-	$(".titles").toggle();
-});
-$("#showItems").click(function() {
-	$(".items").toggle();
+$(".toggle").click(function() {
+	$("." + $(this).attr("data-toggle")).toggle();
 });
 
 $(document).on("keyup", "input", function() {
@@ -19,24 +26,13 @@ $(document).on("keyup", "textarea", function() {
 		var id = $(this).attr("id").substr(0, $(this).attr("id").length - 6);
 		$("#" + id).empty();
 		$.each($(this).val().split("\n"), function(index, value) {
-			$("#" + id).append("<br>		- '" + value + "'");
+			$("#" + id).append("\n        - '" + value + "'");
 		});
 		if($(this).is("textarea") && $(this).val().length == 0) {
 			$("#" + $(this).attr("id").substr(0, $(this).attr("id").length - 6)).text("[]");
 		}
 	}
 });
-
-/*
- *	?
- *
-$("select").change(function() {
-	if($(this).attr("id").substr(-7) == "_change") {
-		$("#" + $(this).attr("id").substr(0, $(this).attr("id").length - 7)).text($(this).val());
-	}
-});
-*/
-
 $(document).on("click", ".newItem", function() {
 	$.get("templates/menu.txt", function(data) {
 		$(".items-edit").append(data.replace(/replace/gi, parseInt($(".items-edit").find(">:last-child").attr("id")) + 1));
@@ -46,36 +42,12 @@ $(document).on("click", ".newItem", function() {
 		$(".items").append(data.replace(/replace/gi, parseInt($(".items").find(">:last-child").attr("id")) + 1));
 	});
 });
-
-/*
- *	FUNCTIONS
- */
- 
-/*
- *	?
- *
-function makeYAMLList(array, indentAmt) {
-	if (array.length == 0)
-		return "[]";
-	if (typeof array === "string") {
-		array = array.split('\n');
+$(document).on("click", ".removeItem", function() {
+	if(confirm("Are you sure you want to remove this item?")) {
+		$("#" + $(this).parent().closest("div").attr("id")).remove();
+		$(this).parent().closest("div").remove();
 	}
-	var out = '\n';
-	$.each(array, x => {
-		value = array[x];
-		out += Array(indentAmt + 1).join(' ') + "- '" + value + "'\n"
-	});
-	return out.substring(0, out.length - 1);
-}
-
-$(document).ready(
-	function() {
-		$('select[name=menu_type_select]').change(
-			function() {
-				var newText = $('option:selected', this).text();
-				$('#box4').text(newText);
-			}
-		);
-	}
-);
-*/
+});
+$(document).on("DOMSubtreeModified", "pre code", function() {
+	editor.setValue($(this).text());
+});

@@ -19,37 +19,51 @@
 		<link rel="stylesheet" href="assets/css/style.css" media="screen">
 	</head>
 	<body>
-		<div id="download" style="float: left; padding-right: 30px;">
-			<pre><code>menu_title: '<span id="menu-title">&bAwesome Menu</span>'
+		<pre><code>menu_title: '<span id="menu-title">&bAwesome Menu</span>'
 open_command: <span id="menu-open-command">menu</span>
 size: <span id="menu-size">9</span>
 update_interval: <span id="menu-update-interval">1</span>
 items: <span class="items"><span id="1">
-	'<span id="item-1-name">1</span>':
-		material: <span id="item-1-material">IRON_SWORD</span>
-		slot: <span id="item-1-slot">1</span>
-		display_name: '<span id="item-1-display-name">&fIron Sword</span>'
-		lore: <span id="item-1-lore">[]</span>
-		left_click_commands: <span id="item-1-left-click-commands">[]</span>
-		right_click_commands: <span id="item-1-right-click-commands">[]</span>
-		update: <span id="item-1-update">true</span></span></span>
-			</code></pre>
-		</div>
+    '<span id="item-1-name">1</span>':
+        material: <span id="item-1-material">IRON_SWORD</span>
+        slot: <span id="item-1-slot">1</span>
+        display_name: '<span id="item-1-display-name">&fIron Sword</span>'
+        lore: <span id="item-1-lore">[]</span>
+        left_click_commands: <span id="item-1-left-click-commands">[]</span>
+        right_click_commands: <span id="item-1-right-click-commands">[]</span>
+        update: <span id="item-1-update">true</span></span></span>
+		</code></pre>
+	
+		<div id="output"></div>
 		
-		<div class="boxes">
-			<button id="showMenu">Toggle Menu</button>
-			<button id="showItems">Toggle Items</button>
-				<p>Menu Title</p>
-				<input type="text" id="menu-title_keyup" value="&bAwesome Menu" />
+		<div id="input">
+			<div class="head">
+				<button class="btn toggle" data-toggle="menu">Toggle Menu</button>
+				<button class="btn toggle" data-toggle="items-wrapper">Toggle Items</button>
+			</div>
+			<div class="section-head">
+				Menu
+			</div>
+			<div class="section menu">
+				<div class="input-group">
+					<label>Title</title>
+					<input type="text" id="menu-title_keyup" value="&bAwesome Menu" />
+				</div>
 				<br>
-				<p>Open Menu Command</p>
-				<input type="text" id="menu-open-command_keyup" value="menu" />
+				<div class="input-group">
+					<label>Command</title>
+					<input type="text" id="menu-open-command_keyup" value="menu" />
+				</div>
 				<br>
-				<p>Menu Size (Factors of 9)</p>
-				<input type="number" id="menu-size_keyup" value="9" />
+				<div class="input-group">
+					<label>Size (factors of 9)</title>
+					<input type="number" id="menu-size_keyup" value="9" />
+				</div>
 				<br>
-				<p>Update Interval</p>
-				<input type="number" id="menu-update-interval_keyup" value="1" />
+				<div class="input-group">
+					<label>Update Interval</title>
+					<input type="number" id="menu-update-interval_keyup" value="1" />
+				</div>
 				<br>
 				<p>Menu Type</p>
 				<select name="menu_type_select" class="input-field">
@@ -69,40 +83,46 @@ items: <span class="items"><span id="1">
 				<br>
 				<p>Deny Commands (You must use the []) <br> Options: [player], [console], [commandevent], [message], [openguiment], [connect], and [close].</p>
 				<textarea id='deny_commands' style="width: 300px;" placeholder="[message] Sorry!"></textarea>
-			<br>
-			<div class="items-edit">
-				<div id="1">
-					<p>ID</p>
-					<input type="text" id="item-1-name_keyup" value="1" />
-					<br>
-					<p>Material</p>
-					<input type="text" id="item-1-material_keyup" value="IRON_SWORD" />
-					<br>
-					<p>Slot</p>
-					<input type="text" id="item-1-slot_keyup" value="1" />
-					<br>
-					<p>Display Name</p>
-					<input type="text" id="item-1-display-name_keyup" value="&fIron Sword" />
-					<br>
-					<p>Lore</p>
-					<textarea id="item-1-lore_keyup" placeholder="&5This is a legendary iron sword."></textarea>
-					<br>
-					<p>Left Click Commands (Must start with []) <br> Options: [player], [console], [commandevent], [message], [openguiment], [connect], and [close].</p>
-					<textarea id="item-1-left-click-commands_keyup" placeholder="[close]"></textarea>
-					<br>
-					<p>Right Click Commands (Must start with []) <br> Options: [player], [console], [commandevent], [message], [openguiment], [connect], and [close].</p>
-					<textarea id="item-1-right-click-commands_keyup" placeholder="[connect] hub"></textarea>
-					<p>Update</p>
-					<input type="text" id="item-1-update_keyup" value="true" />
-					<br>
-				</div>
 			</div>
-			<button class="btn newItem">Add Another Item</button>
+			<div class="section-head">
+				Items
+			</div>
+			<div class="section items-wrapper">
+				<div class="items-edit">
+					<div id="1">
+						<p>ID</p>
+						<input type="text" id="item-1-name_keyup" value="1" />
+						<br>
+						<p>Material</p>
+						<input type="text" id="item-1-material_keyup" value="IRON_SWORD" />
+						<br>
+						<p>Slot</p>
+						<input type="text" id="item-1-slot_keyup" value="1" />
+						<br>
+						<p>Display Name</p>
+						<input type="text" id="item-1-display-name_keyup" value="&fIron Sword" />
+						<br>
+						<p>Lore</p>
+						<textarea id="item-1-lore_keyup" placeholder="&5This is a legendary iron sword."></textarea>
+						<br>
+						<p>Left Click Commands (Must start with []) <br> Options: [player], [console], [commandevent], [message], [openguiment], [connect], and [close].</p>
+						<textarea id="item-1-left-click-commands_keyup" placeholder="[close]"></textarea>
+						<br>
+						<p>Right Click Commands (Must start with []) <br> Options: [player], [console], [commandevent], [message], [openguiment], [connect], and [close].</p>
+						<textarea id="item-1-right-click-commands_keyup" placeholder="[connect] hub"></textarea>
+						<p>Update</p>
+						<input type="text" id="item-1-update_keyup" value="true" />
+						<br>
+					</div>
+				</div>
+				<button class="btn newItem">Create Item</button>
+			</div>
 		</div>
-	
-        <div class="functions" id="functionids"></div>
 		
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.8/ace.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.8/mode-yaml.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.8/theme-chrome.js"></script>
 		<script type="text/javascript" src="assets/js/script.js"></script>
 		
 		<!--

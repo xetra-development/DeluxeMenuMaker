@@ -1,26 +1,53 @@
-pre {
-	background-color: #f5f5f5;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	width: 800px;
-	height: 100%;
+body, html {
+	margin: 0;
 }
 
-p {
-	margin: 0 0 10px;
+#output {
+	float: left;
+	width: 50vw;
+	height: 100vh;
 }
 
-.boxes {
-	height: 500px;
-	overflow: scroll;
-	width: 400px;
-	display: inline-block;
-	padding: 8px;
-	border: 3px solid #FCB326;
-	border-radius: 6px;
-	box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2), inset 0 2px 1px rgba(0, 0, 0, 0.2);
+#input {
+	height: 96vh;
+	overflow: auto;
+	border-left: 3px solid #545454;
+	padding: 2vh 15px;
 }
 
-select {
-	display: block;
+.btn {
+	border: none;
+	background: #189ad3;
+	color: #fff;
+	padding: 10px;
+	cursor: pointer;
+}
+.btn:hover {
+	background: #107dac;
+}
+
+.head {
+	margin: -2vh -15px 0;
+	padding: 1vh 15px;
+	background: #ebebeb;
+	text-align: center;
+}
+
+.section-head {
+	margin: 0 -15px;
+	padding: 0.5vh 15px;
+	background: #005073;
+	color: #fff;
+}
+
+.section {
+	margin: 2vh 0;
+}
+
+pre, code {
+	width: 0;
+	height: 0;
+	visibility: hidden;
+	margin: 0;
+	padding: 0;
 }

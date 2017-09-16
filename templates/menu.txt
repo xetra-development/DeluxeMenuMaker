@@ -2,6 +2,8 @@
 	<p>ID</p>
 	<input type="text" id="item-replace-name_keyup" value="replace" />
 	<br>
+	<button class="btn removeItem">Remove Item</button>
+	<br>
 	<p>Material</p>
 	<input type="text" id="item-replace-material_keyup" value="IRON_SWORD" />
 	<br>
