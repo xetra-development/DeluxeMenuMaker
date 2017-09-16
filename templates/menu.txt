@@ -1,27 +1,28 @@
 <div id="replace">
-	<p>ID</p>
-	<input type="text" id="item-replace-name_keyup" value="replace" />
+	<label>ID</label>
+	<input class="form-control" type="text" id="item-replace-name_keyup" value="replace" />
 	<br>
 	<button class="btn removeItem">Remove Item</button>
 	<br>
-	<p>Material</p>
-	<input type="text" id="item-replace-material_keyup" value="IRON_SWORD" />
+	<label>Material</label>
+	<input class="form-control" type="text" id="item-replace-material_keyup" value="IRON_SWORD" />
 	<br>
-	<p>Slot</p>
-	<input type="text" id="item-replace-slot_keyup" value="replace" />
+	<label>Slot</label>
+	<input class="form-control" type="text" id="item-replace-slot_keyup" value="replace" />
 	<br>
-	<p>Display Name</p>
-	<input type="text" id="item-replace-display-name_keyup" value="&fIron Sword" />
+	<label>Display Name</label>
+	<input class="form-control" type="text" id="item-replace-display-name_keyup" value="&fIron Sword" />
 	<br>
-	<p>Lore</p>
-	<textarea id="item-replace-lore_keyup" placeholder="&5This is a legendary iron sword."></textarea>
+	<label>Lore</label>
+	<textarea class="form-control" id="item-replace-lore_keyup" placeholder="&5This is a legendary iron sword."></textarea>
 	<br>
-	<p>Left Click Commands (Must start with []) <br> Options: [player], [console], [commandevent], [message], [openguiment], [connect], and [close].</p>
-	<textarea id="item-replace-left-click-commands_keyup" placeholder="[close]"></textarea>
+	<label>Left Click Commands (Must start with []) <br> Options: [player], [console], [commandevent], [message], [openguiment], [connect], and [close].</label>
+	<textarea class="form-control" id="item-replace-left-click-commands_keyup" placeholder="[close]"></textarea>
 	<br>
-	<p>Right Click Commands (Must start with []) <br> Options: [player], [console], [commandevent], [message], [openguiment], [connect], and [close].</p>
-	<textarea id="item-replace-right-click-commands_keyup" placeholder="[connect] hub"></textarea>
-	<p>Update</p>
-	<input type="text" id="item-replace-update_keyup" value="true" />
+	<label>Right Click Commands (Must start with []) <br> Options: [player], [console], [commandevent], [message], [openguiment], [connect], and [close].</label>
+	<textarea class="form-control" id="item-replace-right-click-commands_keyup" placeholder="[connect] hub"></textarea>
+	<label>Update</label>
+	<input class="form-control" type="text" id="item-replace-update_keyup" value="true" />
 	<br>
 </div>
+
