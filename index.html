@@ -1,272 +1,119 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <!-- COMMON TAGS -->
-    <meta charset="utf-8">
-    <title>DeluxeMenus Maker</title>
-
-    <!-- Search Engine -->
-    <meta name="description" content="Make your DeluxeMenus Online! ">
-    <meta name="image" content="https://avatars3.githubusercontent.com/u/28678871?v=4&s=200">
-
-    <!-- Schema.org for Google -->
-    <meta itemprop="name" content="DeluxeMenus Maker">
-    <meta itemprop="description" content="Make your DeluxeMenus Online! ">
-
-    <!-- Open Graph general (Facebook, Pinterest & Google+) -->
-    <meta name="og:title" content="DeluxeMenus Maker">
-    <meta name="og:description" content="Make your DeluxeMenus Online! ">
-    <meta name="og:image" content="https://avatars3.githubusercontent.com/u/28678871?v=4&s=200">
-    <meta name="og:url" content="https://artexdevelopment.github.io/DeluxeMenuMaker/">
-    <meta name="og:site_name" content="DeluxeMenus Maker">
-    <meta name="og:locale" content="en_US">
-    <meta name="og:type" content="website">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-</head>
-<style>
-    pre {
-        background-color: #f5f5f5;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        width: 800px;
-        height: 100%;
-    }
-    
-    p {
-        margin: 0 0 10px;
-    }
-    
-    .boxes {
-        height: 500px;
-        overflow: scroll;
-        width: 400px;
-        display: inline-block;
-        padding: 8px;
-        border: 3px solid #FCB326;
-        border-radius: 6px;
-        box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2), inset 0 2px 1px rgba(0, 0, 0, 0.2);
-    }
-    
-    select {
-        display: block;
-    }
-
-</style>
-    <script>
-$(document).ready(function(){
-    $("#showMenu").click(function(){
-        $(".titles").toggle(1000);
-    });
-        $("#showItems").click(function(){
-        $(".items").toggle(1000);
-    });
-}); 
-    </script>
-
-<body>
-    <div id="download" style="float: left; padding-right: 30px;">
-        <pre><code id="yaml">menu_title: '<label id='box1'></label>'
-open_command: <label id='box2'></label>
-size: <label id='box3'></label>
-<label id='box4'></label>:
-  requirements:
-    <label id='box5'></label>:
-      type: <label id='box6'></label>
-      permission: <label id='box7'></label>
-      deny_commands:<label id='box8'>[]</label>
-items:<div id="duplicater">   '<label id='box9'></label>':
-    material: <label id='box10'></label>
-    slot: <label id='box11'></label>
-    display_name: '<label id='box12'></label>'
-    lore:<label id='box13'>[]</label>
-    left_click_commands:<label id='box14'>[]</label>
-    right_click_commands:<label id='box15'>[]</label>  </div><!--
-      --></code></pre>
-
-    </div>
-    <div class="boxes">
-        <button id="showMenu">Toggle Menu</button>
-        <button id="showItems">Toggle Items</button>
-        <div class="titles">
-        
-        <p>Menu Title</p>
-        <input type="text" id='menu_title' placeholder="My Cool GUI" />
-        <br>
-        <p>Open Menu Command</p>
-        <input type='text' id='open_command' placeholder="coolgui" />
-        <br>
-        <p>Menu Size (Factors of 9)</p>
-        <input type='number' step="3" id='menu_size' placeholder="9, 18, 27, 36, 45, 54" />
-        <br>
-        <p>Menu Type</p>
-        <select name="menu_type_select" class="input-field">
-  <option>Select</option>
-  <option>open_requirement</option>
-  <option>view_requirement</option>
-</select>
-        <br>
-        <p>Any Name Here</p>
-        <input type='text' id='any_name' placeholder="permission" />
-        <br>
-        <p>What type of requirement? (Example: has permission)</p>
-        <input type='text' id='requirement_type' placeholder="has permission" />
-        <br>
-        <p>What would you like your custom permission node to be?</p>
-        <input type='text' id='permission_node' placeholder="open.menu.cool" />
-        <br>
-        <p>Deny Commands (You must use the []) <br> Options: [player], [console], [commandevent], [message], [openguiment], [connect], and [close].</p>
-            <textarea id='deny_commands' style="width: 300px;" placeholder="[message] Sorry!"></textarea></div>
-        <br><div class="items" id="selection">
-        <p>Which item number is this?</p>
-        <input type='text' id='item_number' placeholder="1" />
-        <br>
-        <p>What material will this item use?</p>
-        <input type='text' id='material_name' placeholder="WOOD" />
-        <br>
-        <p>Which slot in the GUI will this use?</p>
-        <input type='text' id='slot_number' placeholder="0" />
-        <br>
-        <p>What would you like the item's display name to be?</p>
-        <input type='text' id='display_name' placeholder="My Cool Wooden Block" />
-        <br>
-        <p>Lore</p>
-        <textarea id='lore' style="width: 300px;" placeholder="&1My Cool Block"></textarea>
-        <br>
-        <p>Left Click Commands (You must use the []) <br> Options: [player], [console], [commandevent], [message], [openguiment], [connect], and [close].</p>
-        <textarea id='left_click_commands' style="width: 300px;" placeholder="[close]"></textarea>
-        <br>
-        <p>Right Click Commands (You must use the []) <br> Options: [player], [console], [commandevent], [message], [openguiment], [connect], and [close].</p>
-        <textarea id='right_click_commands' style="width: 300px;" placeholder="[connect] hub"></textarea>
-        <button id="button" onlick="duplicate()">Add Another Item</button>
-  
-        </div></div>
-        <div class="functions" id="functionids">
-    <script>
-        
-    
-        function makeYAMLList(array, indentAmt) {
-            if (array.length == 0)
-                return "[]";
-            if (typeof array === "string") {
-                array = array.split('\n');
-            }
-            var out = '\n';
-            $.each(array, x => {
-                value = array[x];
-                out += Array(indentAmt + 1).join(' ') + "- '" + value + "'\n"
-            });
-            return out.substring(0, out.length - 1);
-        }
-
-        $('#menu_title').keyup(function() {
-            $('#box1').text($(this).val());
-        });
-
-        $('#open_command').keyup(function() {
-            $('#box2').text($(this).val());
-        });
-
-        $('#menu_size').keyup(function() {
-            $('#box3').text($(this).val());
-        });
-
-        $(document).ready(
-            function() {
-                $('select[name=menu_type_select]').change(
-                    function() {
-                        var newText = $('option:selected', this).text();
-                        $('#box4').text(newText);
-                    }
-                );
-            }
-        );
-
-        $('#any_name').keyup(function() {
-            $('#box5').text($(this).val());
-        });
-
-        $('#requirement_type').keyup(function() {
-            $('#box6').text($(this).val());
-        });
-
-        $('#permission_node').keyup(function() {
-            $('#box7').text($(this).val());
-        });
-
-        $('#deny_commands').keyup(function() {
-            $('#box8').text(makeYAMLList($(this).val(), 8));
-        });
-
-        $('#item_number').keyup(function() {
-            $('#box9').text($(this).val());
-        });
-
-        $('#material_name').keyup(function() {
-            $('#box10').text($(this).val());
-        });
-
-        $('#slot_number').keyup(function() {
-            $('#box11').text($(this).val());
-        });
-
-        $('#display_name').keyup(function() {
-            $('#box12').text($(this).val());
-        });
-
-        $('#lore').keyup(function() {
-            $('#box13').text(makeYAMLList($(this).val(), 8));
-        });
-
-        $('#left_click_commands').keyup(function() {
-            $('#box14').text(makeYAMLList($(this).val(), 8));
-        });
-
-        $('#right_click_commands').keyup(function() {
-            $('#box15').text(makeYAMLList($(this).val(), 8));
-        });
-        
-
-
-
-        var i = 0;
-        var original = document.getElementById('duplicater');
-        document.getElementById('button').onclick = duplicate;
-
-
-        function duplicate() {
-            var clone = original.cloneNode(true); // "deep" clone
-            clone.id = "duplicater" + ++i; // there can only be one element with an ID
-            original.parentNode.appendChild(clone);
-        }
-
-    </script>
-            <script>
-            
-                    $(function(){
-  $("#button").on('click', function(){
-      var length = $(".items").length;
-          newId = "selection-" + length;
-    clone = $("#selection").clone().attr("id", newId);
-      clone.children('.items').attr('id', 'select-' + length++);
-    $("#selection").append(clone);
-  })
-})
-            </script><script>              
-                                    $(function(){
-  $("#button3").on('click', function(){
-      var length = $(".functions").length;
-          newId = "selection-" + length;
-    clone = $("#functionsids").clone().attr("id", newId);
-      clone.children('.functions').attr('id', 'select-' + length++);
-    $("#functionids").append(clone);
-  })
-})
-            </script>
-        </div>
-
-</body>
-
+	<head>
+		<meta charset="utf-8">
+		<title>DeluxeMenus Maker</title>
+		<meta name="description" content="Create Custom Menus Online (DeluxeMenus)">
+		<meta name="image" content="https://avatars3.githubusercontent.com/u/28678871?v=4&s=200">
+		<meta itemprop="name" content="DeluxeMenus Menu Creator">
+		<meta itemprop="description" content="Create Custom Menus Online (DeluxeMenus)">
+		<meta name="og:title" content="DeluxeMenus Menu Creator">
+		<meta name="og:description" content="Create Custom Menus Online (DeluxeMenus)">
+		<meta name="og:image" content="https://avatars3.githubusercontent.com/u/28678871?v=4&s=200">
+		<meta name="og:url" content="https://artexdevelopment.github.io/DeluxeMenuMaker/">
+		<meta name="og:site_name" content="DeluxeMenus Menu Creator">
+		<meta name="og:locale" content="en_US">
+		<meta name="og:type" content="website">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="assets/css/style.css" media="screen">
+	</head>
+	<body>
+		<div id="download" style="float: left; padding-right: 30px;">
+			<pre><code>menu_title: '<span id="menu-title">&bAwesome Menu</span>'
+open_command: <span id="menu-open-command">menu</span>
+size: <span id="menu-size">9</span>
+update_interval: <span id="menu-update-interval">1</span>
+items: <span class="items"><span id="1">
+	'<span id="item-1-name">1</span>':
+		material: <span id="item-1-material">IRON_SWORD</span>
+		slot: <span id="item-1-slot">1</span>
+		display_name: '<span id="item-1-display-name">&fIron Sword</span>'
+		lore: <span id="item-1-lore">[]</span>
+		left_click_commands: <span id="item-1-left-click-commands">[]</span>
+		right_click_commands: <span id="item-1-right-click-commands">[]</span>
+		update: <span id="item-1-update">true</span></span></span>
+			</code></pre>
+		</div>
+		
+		<div class="boxes">
+			<button id="showMenu">Toggle Menu</button>
+			<button id="showItems">Toggle Items</button>
+				<p>Menu Title</p>
+				<input type="text" id="menu-title_keyup" value="&bAwesome Menu" />
+				<br>
+				<p>Open Menu Command</p>
+				<input type="text" id="menu-open-command_keyup" value="menu" />
+				<br>
+				<p>Menu Size (Factors of 9)</p>
+				<input type="number" id="menu-size_keyup" value="9" />
+				<br>
+				<p>Update Interval</p>
+				<input type="number" id="menu-update-interval_keyup" value="1" />
+				<br>
+				<p>Menu Type</p>
+				<select name="menu_type_select" class="input-field">
+					<option>Select</option>
+					<option>open_requirement</option>
+					<option>view_requirement</option>
+				</select>
+				<br>
+				<p>Any Name Here</p>
+				<input type='text' id='any_name' placeholder="permission" />
+				<br>
+				<p>What type of requirement? (Example: has permission)</p>
+				<input type='text' id='requirement_type' placeholder="has permission" />
+				<br>
+				<p>What would you like your custom permission node to be?</p>
+				<input type='text' id='permission_node' placeholder="open.menu.cool" />
+				<br>
+				<p>Deny Commands (You must use the []) <br> Options: [player], [console], [commandevent], [message], [openguiment], [connect], and [close].</p>
+				<textarea id='deny_commands' style="width: 300px;" placeholder="[message] Sorry!"></textarea>
+			<br>
+			<div class="items-edit">
+				<div id="1">
+					<p>ID</p>
+					<input type="text" id="item-1-name_keyup" value="1" />
+					<br>
+					<p>Material</p>
+					<input type="text" id="item-1-material_keyup" value="IRON_SWORD" />
+					<br>
+					<p>Slot</p>
+					<input type="text" id="item-1-slot_keyup" value="1" />
+					<br>
+					<p>Display Name</p>
+					<input type="text" id="item-1-display-name_keyup" value="&fIron Sword" />
+					<br>
+					<p>Lore</p>
+					<textarea id="item-1-lore_keyup" placeholder="&5This is a legendary iron sword."></textarea>
+					<br>
+					<p>Left Click Commands (Must start with []) <br> Options: [player], [console], [commandevent], [message], [openguiment], [connect], and [close].</p>
+					<textarea id="item-1-left-click-commands_keyup" placeholder="[close]"></textarea>
+					<br>
+					<p>Right Click Commands (Must start with []) <br> Options: [player], [console], [commandevent], [message], [openguiment], [connect], and [close].</p>
+					<textarea id="item-1-right-click-commands_keyup" placeholder="[connect] hub"></textarea>
+					<p>Update</p>
+					<input type="text" id="item-1-update_keyup" value="true" />
+					<br>
+				</div>
+			</div>
+			<button class="btn newItem">Add Another Item</button>
+		</div>
+	
+        <div class="functions" id="functionids"></div>
+		
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript" src="//localhost/assets/js/script.js"></script>
+		
+		<!--
+		   - ?
+		   -
+		<label id='box4'></label>:
+			  requirements:
+				<label id='box5'></label>:
+				  type: <label id='box6'></label>
+				  permission: <label id='box7'></label>
+				  deny_commands:<label id='box8'>[]</label>
+		-->
+	</body>
 </html>

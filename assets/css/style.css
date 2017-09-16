@@ -1,0 +1,26 @@
+pre {
+	background-color: #f5f5f5;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	width: 800px;
+	height: 100%;
+}
+
+p {
+	margin: 0 0 10px;
+}
+
+.boxes {
+	height: 500px;
+	overflow: scroll;
+	width: 400px;
+	display: inline-block;
+	padding: 8px;
+	border: 3px solid #FCB326;
+	border-radius: 6px;
+	box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2), inset 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+select {
+	display: block;
+}
