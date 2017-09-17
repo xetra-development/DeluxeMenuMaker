@@ -9,7 +9,7 @@ body, html {
 }
 
 #input {
-	height: 96vh;
+	height: 100vh;
 	overflow: auto;
 	border-left: 3px solid #545454;
 	padding: 2vh 15px;
