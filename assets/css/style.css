@@ -9,7 +9,7 @@ body, html {
 }
 
 #input {
-	height: 100vh;
+	height: 96vh;
 	overflow: auto;
 	border-left: 3px solid #545454;
 	padding: 2vh 15px;
@@ -51,4 +51,11 @@ pre, code {
 	margin: 0px!important;
 	padding: 0px!important;
     border: none!important;
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 0px!important; 
+    border: 1px solid transparent;
+    border-radius: 0px!important; 
 }
