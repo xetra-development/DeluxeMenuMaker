@@ -44,8 +44,8 @@ $(document).on("click", ".newItem", function() {
 });
 $(document).on("click", ".removeItem", function() {
 	if(confirm("Are you sure you want to remove this item?")) {
-		$("#" + $(this).parent().closest("div").attr("id")).remove();
-		$(this).parent().closest("div").remove();
+		$("#" + $(this).parent().closest("div").parent().closest("div").attr("id")).remove();
+		$(this).parent().closest("div").parent().closest("div").remove();
 	}
 });
 $(document).on("DOMSubtreeModified", "pre code", function() {

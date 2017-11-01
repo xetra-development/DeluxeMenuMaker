@@ -15,17 +15,6 @@ body, html {
 	padding: 2vh 15px;
 }
 
-.btn {
-	border: none;
-	background: #189ad3;
-	color: #fff;
-	padding: 10px;
-	cursor: pointer;
-}
-.btn:hover {
-	background: #107dac;
-}
-
 .head {
 	margin: -2vh -15px 0;
 	padding: 1vh 15px;
@@ -40,22 +29,49 @@ body, html {
 	color: #fff;
 }
 
-.section {
+.item-head {
+	margin: 0 -15px;
+	padding: 0.5vh 15px;
+	background: #009073;
+	color: #fff;
+}
+
+.menu, .item-body {
 	margin: 2vh 0;
+}
+
+.items-wrapper {
+	margin: 0 0 2vh;
 }
 
 pre, code {
 	width: 0;
 	height: 0;
 	visibility: hidden;
-	margin: 0px!important;
-	padding: 0px!important;
-    border: none!important;
+	margin: 0;
+	padding: 0;
+    border: none;
 }
 
-.alert {
-    padding: 15px;
-    margin-bottom: 0px!important; 
-    border: 1px solid transparent;
-    border-radius: 0px!important; 
+.overlay {
+	background: #fff;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	display: none;
+	z-index: 998;
+}
+
+.overlay h2 {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 999;
+}
+
+@media screen and (max-width: 992px) {
+	.overlay {
+		display: block;
+	}
 }

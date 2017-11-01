@@ -1,28 +1,32 @@
 <div id="replace">
-	<label>ID</label>
-	<input class="form-control" type="text" id="item-replace-name_keyup" value="replace" />
-	<br>
-	<button class="btn removeItem">Remove Item</button>
-	<br>
-	<label>Material</label>
-	<input class="form-control" type="text" id="item-replace-material_keyup" value="IRON_SWORD" />
-	<br>
-	<label>Slot</label>
-	<input class="form-control" type="text" id="item-replace-slot_keyup" value="replace" />
-	<br>
-	<label>Display Name</label>
-	<input class="form-control" type="text" id="item-replace-display-name_keyup" value="&fIron Sword" />
-	<br>
-	<label>Lore</label>
-	<textarea class="form-control" id="item-replace-lore_keyup" placeholder="&5This is a legendary iron sword."></textarea>
-	<br>
-	<label>Left Click Commands (Must start with []) <br> Options: [player], [console], [commandevent], [message], [openguiment], [connect], and [close].</label>
-	<textarea class="form-control" id="item-replace-left-click-commands_keyup" placeholder="[close]"></textarea>
-	<br>
-	<label>Right Click Commands (Must start with []) <br> Options: [player], [console], [commandevent], [message], [openguiment], [connect], and [close].</label>
-	<textarea class="form-control" id="item-replace-right-click-commands_keyup" placeholder="[connect] hub"></textarea>
-	<label>Update</label>
-	<input class="form-control" type="text" id="item-replace-update_keyup" value="true" />
-	<br>
+	<div class="item-head">
+		replace
+	</div>
+	<div class="item-body">
+		<button class="btn btn-danger btn-sm removeItem">Remove</button>
+		<br>
+		<br>
+		<label>ID</label>
+		<input class="form-control" type="text" id="item-replace-name_keyup" value="replace" />
+		<br>
+		<label>Material</label>
+		<input class="form-control" type="text" id="item-replace-material_keyup" value="IRON_SWORD" />
+		<br>
+		<label>Slot</label>
+		<input class="form-control" type="text" id="item-replace-slot_keyup" value="replace" />
+		<br>
+		<label>Display Name</label>
+		<input class="form-control" type="text" id="item-replace-display-name_keyup" value="&fIron Sword" />
+		<br>
+		<label>Lore</label>
+		<textarea class="form-control" id="item-replace-lore_keyup" placeholder="&5This is a legendary iron sword."></textarea>
+		<br>
+		<label>Left Click Commands (Must start with []) <br> Options: [player], [console], [commandevent], [message], [openguiment], [connect], and [close].</label>
+		<textarea class="form-control" id="item-replace-left-click-commands_keyup" placeholder="[close]"></textarea>
+		<br>
+		<label>Right Click Commands (Must start with []) <br> Options: [player], [console], [commandevent], [message], [openguiment], [connect], and [close].</label>
+		<textarea class="form-control" id="item-replace-right-click-commands_keyup" placeholder="[connect] hub"></textarea>
+		<label>Update</label>
+		<input class="form-control" type="text" id="item-replace-update_keyup" value="true" />
+	</div>
 </div>
-

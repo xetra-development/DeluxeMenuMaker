@@ -16,11 +16,14 @@
 		<meta name="og:type" content="website">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://bootswatch.com/flatly/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.7.0/introjs.min.css">
 		<link rel="stylesheet" href="assets/css/style.css" media="screen">
-        <link href="https://bootswatch.com/paper/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.7.0/introjs.min.css" />
 	</head>
 	<body>
+		<div class="overlay">
+			<h2>DeluxeMenuMaker does not currently support mobile devices.</h2>
+		</div>
 		<pre><code>menu_title: '<span id="menu-title">&bAwesome Menu</span>'
 open_command: <span id="menu-open-command">menu</span>
 size: <span id="menu-size">9</span>
@@ -41,19 +44,19 @@ items: <span class="items"><span id="1">
 		
 		<div id="input">
 			<div class="head">
-                <button class="btn toggle" href="javascript:void(0);" onclick="javascript:introJs().start();">Tutorial</button>
-				<button class="btn toggle" data-toggle="menu" data-step="1" data-intro="You can click this to toggle the top part of the menu maker!">Toggle Menu</button>
-				<button class="btn toggle" data-toggle="items-wrapper" data-step="2" data-intro="You can click this to toggle the item part of the menu maker!">Toggle Items</button>
-				<a href="https://github.com/artexdevelopment/DeluxeMenuMaker" target="_blank"><button class="btn toggle" style="background-color: green" data-intro="Click this to navigate to author's GitHub!">Source Code</button></a>
-				<a href="https://dev.theartex.net" target="_blank"><button class="btn toggle" style="background-color: green" data-intro="Click this to navigate to author's page!">Authors</button></a>
+        <button class="btn btn-primary" onclick="javascript:introJs().start();">Tutorial</button>
+				<button class="btn btn-primary toggle" data-toggle="menu" data-step="1" data-intro="Click here to toggle view of the menu.">Toggle Menu</button>
+				<button class="btn btn-primary toggle" data-toggle="items-wrapper" data-step="2" data-intro="Click here to toggle view of the items.">Toggle Items</button>
+				<a href="https://github.com/artexdevelopment/DeluxeMenuMaker" target="_blank"><button class="btn btn-primary" data-intro="Click here to view the source code of this project.">Source Code</button></a>
+				<a href="https://dev.theartex.net" target="_blank"><button class="btn btn-primary" data-intro="Click here to navigate to the Artex Development website.">Website</button></a>
 			</div>
 			<div class="section-head">
 				Menu
 			</div>
-			<div class="section menu">
+			<div class="menu">
 				<div class="input-group">
                     <label>Title</label>
-					<input class="form-control" type="text" id="menu-title_keyup" value="&bAwesome Menu"  data-step="3" data-intro="If you look over to your left, you can see that the text there matches the text in this box!" />
+					<input class="form-control" type="text" id="menu-title_keyup" value="&bAwesome Menu"  data-step="3" data-intro="Changes made to the menu and items will automatically apply to your configuration on the left." />
 				</div>
 				<br>
 				<div class="input-group">
@@ -70,61 +73,43 @@ items: <span class="items"><span id="1">
 					<label>Update Interval</label>
 					<input class="form-control" type="number" id="menu-update-interval_keyup" value="1" />
 				</div>
-				<br>
-                <label>Menu Type</label>
-				<select class="form-control" name="menu_type_select" class="input-field">
-					<option>Select</option>
-					<option>open_requirement</option>
-					<option>view_requirement</option>
-				</select>
-				<br>
-				<label>Any Name Here</label>
-				<input class="form-control" type='text' id='any_name' placeholder="permission" />
-				<br>
-                <label>What type of requirement? (Example: has permission)</label>
-				<input class="form-control" type='text' id='requirement_type' placeholder="has permission" />
-				<br>
-                <label>What would you like your custom permission node to be?</label>
-				<input class="form-control" type='text' id='permission_node' placeholder="open.menu.cool" />
-				<br>
-				<label>Deny Commands (You must use the []) <br> Options: [player], [console], [commandevent], [message], [openguiment], [connect], and [close].</label>
-				<textarea class="form-control" id='deny_commands' style="width: 300px;" placeholder="[message] Sorry!"></textarea>
 			</div>
 			<div class="section-head">
 				Items
 			</div>
-			<div class="section items-wrapper">
+			<div class="items-wrapper">
 				<div class="items-edit">
 					<div id="1">
-						<label>ID</label>
-						<input class="form-control" type="text" id="item-1-name_keyup" value="1" />
-						<br>
-						<label>Material</label>
-						<input class="form-control" type="text" id="item-1-material_keyup" value="IRON_SWORD" />
-						<br>
-						<label>Meta</label>
-						<input class="form-control" type="text" id="item-1-meta_keyup" value="0" />
-						<br>
-						<label>Slot</label>
-						<input class="form-control" type="text" id="item-1-slot_keyup" value="1" />
-						<br>
-						<label>Display Name</label>
-						<input class="form-control" type="text" id="item-1-display-name_keyup" value="&fIron Sword" />
-						<br>
-						<label>Lore</label>
-						<textarea class="form-control" id="item-1-lore_keyup" placeholder="&5This is a legendary iron sword."></textarea>
-						<br>
-						<label>Left Click Commands (Must start with []) <br> Options: [player], [console], [commandevent], [message], [openguiment], [connect], and [close].</label>
-						<textarea class="form-control" id="item-1-left-click-commands_keyup" placeholder="[close]"></textarea>
-						<br>
-						<label>Right Click Commands (Must start with []) <br> Options: [player], [console], [commandevent], [message], [openguiment], [connect], and [close].</label>
-						<textarea class="form-control" id="item-1-right-click-commands_keyup" placeholder="[connect] hub"></textarea>
-						<label>Update</label>
-						<input class="form-control" type="text" id="item-1-update_keyup" value="true" />
-						<br>
+						<div class="item-head">
+							1
+						</div>
+						<div class="item-body">
+							<label>ID</label>
+							<input class="form-control" type="text" id="item-1-name_keyup" value="1" />
+							<br>
+							<label>Material</label>
+							<input class="form-control" type="text" id="item-1-material_keyup" value="IRON_SWORD" />
+							<br>
+							<label>Slot</label>
+							<input class="form-control" type="text" id="item-1-slot_keyup" value="1" />
+							<br>
+							<label>Display Name</label>
+							<input class="form-control" type="text" id="item-1-display-name_keyup" value="&fIron Sword" />
+							<br>
+							<label>Lore</label>
+							<textarea class="form-control" id="item-1-lore_keyup" placeholder="&5This is a legendary iron sword."></textarea>
+							<br>
+							<label>Left Click Commands (Must start with []) <br> Options: [player], [console], [commandevent], [message], [openguiment], [connect], and [close].</label>
+							<textarea class="form-control" id="item-1-left-click-commands_keyup" placeholder="[close]"></textarea>
+							<br>
+							<label>Right Click Commands (Must start with []) <br> Options: [player], [console], [commandevent], [message], [openguiment], [connect], and [close].</label>
+							<textarea class="form-control" id="item-1-right-click-commands_keyup" placeholder="[connect] hub"></textarea>
+							<label>Update</label>
+							<input class="form-control" type="text" id="item-1-update_keyup" value="true" />
+						</div>
 					</div>
 				</div>
-				<button class="btn newItem">Create Item</button>
+				<button class="btn btn-primary newItem">Create Item</button>
 			</div>
 		</div>
 		
@@ -132,7 +117,7 @@ items: <span class="items"><span id="1">
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.8/ace.js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.8/mode-yaml.js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.8/theme-chrome.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.7.0/intro.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.7.0/intro.min.js"></script>
 		<script type="text/javascript" src="assets/js/script.js"></script>
 	</body>
 </html>
