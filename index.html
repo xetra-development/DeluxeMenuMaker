@@ -29,6 +29,10 @@
 open_command: <span id="menu-open-command">menu</span>
 size: <span id="menu-size">9</span>
 update_interval: <span id="menu-update-interval">1</span>
+open_requirement:
+  requirements:
+    <span id="menu-requirement-name"></span>:
+      type: <span id="menu-type"></span>
 items: <span class="items"><span id="1">
     '<span id="item-1-name">1</span>':
         material: <span id="item-1-material">IRON_SWORD</span>
@@ -73,6 +77,27 @@ items: <span class="items"><span id="1">
 					<label>Update Interval</label>
 					<input class="form-control" type="number" id="menu-update-interval_keyup" value="1" />
 				</div>
+                <br>
+                <div class="input-group">
+                    <label>Requirement name</label>
+                    <input class="form-control" type="text" id="menu-requirement-name_keyup" value="anythinghere" />
+                </div>
+                <br>
+                <div class="input-group">
+                    <label>Type</label>
+                    <select name="menu-type-selector" id="menu-type-selector">
+                        <option value="has money">has money</option>
+                        <option value="has permission">has permission</option>
+                        <option value="string contains">string contains</option>
+                        <option value="string equals">string equals</option>
+                        <option value="stringequalsignorecase">stringequalsignorecase</option>
+                    </select>
+                </div>
+                <br>
+                <div class="input-group">
+                    <label><span id="type-name"></span></label>
+                    <input class="form-control" type="text" id="menu-handler_keyup" value="" />
+                </div>
 			</div>
 			<div class="section-head">
 				Items
@@ -104,6 +129,7 @@ items: <span class="items"><span id="1">
 							<br>
 							<label>Right Click Commands (Must start with []) <br> Options: [player], [console], [commandevent], [message], [openguiment], [connect], and [close].</label>
 							<textarea class="form-control" id="item-1-right-click-commands_keyup" placeholder="[connect] hub"></textarea>
+                            <br>
 							<label>Update</label>
 							<input class="form-control" type="text" id="item-1-update_keyup" value="true" />
 						</div>
@@ -119,5 +145,30 @@ items: <span class="items"><span id="1">
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.8/theme-chrome.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.7.0/intro.min.js"></script>
 		<script type="text/javascript" src="assets/js/script.js"></script>
+    <script>
+        function notEmpty() {
+            var e = document.getElementById("menu-type-selector");
+            var strUser = e.options[e.selectedIndex].value;
+            document.getElementById("menu-type").innerText = strUser;
+        }
+        notEmpty();
+        document.getElementById("menu-type-selector").onchange = notEmpty;
+    </script>
+        <script>
+            $('#menu-type-selector').change(function () {
+               var value = $(this).find('option:selected').text();
+
+               if (value == "has permission") {
+                   $('#amount').remove();
+                   $('#type-name').html('Permission ');
+                   $('#menu-type').after("\n      <span id=\"permission\">permission: <span id=\"menu-handler\">");
+               }
+                if (value == "has money") {
+                    $('#permission').remove();
+                    $('#type-name').html('Amount ');
+                    $('#menu-type').after("\n      <span id=\"amount\">amount:</span> <span id=\"menu-handler\">");
+                }
+            });
+        </script>
 	</body>
 </html>
