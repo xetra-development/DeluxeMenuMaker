@@ -179,15 +179,32 @@ items: <span class="items"><span id="1">
 
                if (value == "has permission") {
                    $('#amount').remove();
+                   $('#permission').remove();
                    $('#type-name').html('Permission ');
                    $('#menu-type').after("\n      <span id=\"permission\">permission: <span id=\"menu-handler\">");
+                   $('#input-1').html('');
+                   $('#output-1').html('');
                }
                 if (value == "has money") {
                     $('#permission').remove();
                     $('#type-name').html('Amount ');
                     $('#menu-type').after("\n      <span id=\"amount\">amount:</span> <span id=\"menu-handler\">");
+                    $('#input-1').html('');
+                    $('#output-1').html('');
                 }
                 if (value == "string contains") {
+                    $('#amount').remove();
+                    $('#permission').remove();
+                    $('#input-1').html('input:');
+                    $('#output-1').html('output:');
+                }
+                if (value == "string equals") {
+                    $('#amount').remove();
+                    $('#permission').remove();
+                    $('#input-1').html('input:');
+                    $('#output-1').html('output:');
+                }
+                if (value == "stringequalsignorecase") {
                     $('#amount').remove();
                     $('#permission').remove();
                     $('#input-1').html('input:');
