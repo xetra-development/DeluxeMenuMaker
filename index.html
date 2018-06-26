@@ -169,6 +169,9 @@ items: <span class="items"><span id="1">
         document.getElementById("menu-type-selector").onchange = notEmpty;
     </script>
         <script>
+            window.onbeforeunload = function (e) {
+                return "";
+            };
             $(document).ready(function() {
                 $('#input-1').html('');
                 $('#output-1').html('');
