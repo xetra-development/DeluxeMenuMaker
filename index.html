@@ -33,6 +33,8 @@ open_requirement:
   requirements:
     <span id="menu-requirement-name"></span>:
       type: <span id="menu-type"></span>
+      <span id="input-1">input:</span> '<span id="input-1-info"></span>'
+      <span id="output-1">output:</span> <span id="output-1-info"></span>
 items: <span class="items"><span id="1">
     '<span id="item-1-name">1</span>':
         material: <span id="item-1-material">IRON_SWORD</span>
@@ -98,6 +100,16 @@ items: <span class="items"><span id="1">
                     <label><span id="type-name"></span></label>
                     <input class="form-control" type="text" id="menu-handler_keyup" value="" />
                 </div>
+                <br>
+                <div class="input-group">
+                    <label><span id="input-1-label">Input (Do not touch unless required)</span></label>
+                    <input class="form-control" type="text" id="input-1-info_keyup" value="" />
+                </div>
+                <br>
+                <div class="input-group">
+                    <label><span id="output-1-label">Output (Do not touch unless required)</span></label>
+                    <input class="form-control" type="text" id="output-1-info_keyup" value="" />
+                </div>
 			</div>
 			<div class="section-head">
 				Items
@@ -155,6 +167,12 @@ items: <span class="items"><span id="1">
         document.getElementById("menu-type-selector").onchange = notEmpty;
     </script>
         <script>
+            $(document).ready(function() {
+                $('#input-1').html('');
+                $('#output-1').html('');
+            });
+        </script>
+        <script>
             $('#menu-type-selector').change(function () {
                var value = $(this).find('option:selected').text();
 
@@ -167,6 +185,12 @@ items: <span class="items"><span id="1">
                     $('#permission').remove();
                     $('#type-name').html('Amount ');
                     $('#menu-type').after("\n      <span id=\"amount\">amount:</span> <span id=\"menu-handler\">");
+                }
+                if (value == "string contains") {
+                    $('#amount').remove();
+                    $('#permission').remove();
+                    $('#input-1').html('input:');
+                    $('#output-1').html('output:');
                 }
             });
         </script>
