@@ -26,18 +26,20 @@
 			<h2>DeluxeMenuMaker does not currently support mobile devices.</h2>
 		</div>
 		
-		<pre><code>menu_title: '<span id="menu-title">&bAwesome Menu</span>'
-open_command: <span id="menu-open-command">menu</span>
-size: <span id="menu-size">9</span>
-update_interval: <span id="menu-update-interval">1</span>
-open_requirement:
-  requirements:
-    <span id="menu-requirement-name"></span>:
-      type: <span id="menu-type"></span>
-      <span id="input-1">input:</span> '<span id="input-1-info"></span>'
-      <span id="output-1">output:</span> <span id="output-1-info"></span>
-items: <span class="items"><span id="1">
-    '<span id="item-1-name">1</span>':
+<pre><code>gui_menus:
+  <span id="menu-name">menuname</span>:
+    menu_title: '<span id="menu-title">&bAwesome Menu</span>'
+    open_command: <span id="menu-open-command">menu</span>
+    size: <span id="menu-size">9</span>
+    update_interval: <span id="menu-update-interval">1</span>
+    open_requirement:
+      requirements:
+        <span id="menu-requirement-name"></span>:
+          type: <span id="menu-type"></span>
+          <span id="input-1">input:</span> '<span id="input-1-info"></span>'
+          <span id="output-1">output:</span> <span id="output-1-info"></span>
+    items: <span class="items"><span id="1">
+      '<span id="item-1-name">1</span>':
         material: <span id="item-1-material">IRON_SWORD</span>
         slot: <span id="item-1-slot">1</span>
         display_name: '<span id="item-1-display-name">&fIron Sword</span>'
@@ -57,11 +59,17 @@ items: <span class="items"><span id="1">
 				<a href="https://github.com/PlaceholderAPI/DeluxeMenuMaker" target="_blank"><button class="btn btn-primary" data-intro="Click here to view the source code of this project.">Source Code</button></a>
 				<a href="https://testplugins.com/" target="_blank"><button class="btn btn-primary" data-intro="Click here to go to Testplugin.com">Website</button></a>
                 <p style="padding-top: 15px;">Made with ❤️by <a href="https://github.com/darbyjack">Glare</a></p>
+                <button class="btn btn-primary" onclick="download()">Download Menu</button>
 			</div>
 			<div class="section-head">
 				Menu
 			</div>
 			<div class="menu">
+                <div class="input-group">
+                    <label>Menu Name</label>
+                    <input class="form-control" type="text" id="menu-name_keyup" value="menuname" />
+                </div>
+                <br>
 				<div class="input-group">
 					<label>Title</label>
 					<input class="form-control" type="text" id="menu-title_keyup" value="&bAwesome Menu"  data-step="3" data-intro="Changes made to the menu and items will automatically apply to your configuration on the left." />
@@ -181,6 +189,12 @@ items: <span class="items"><span id="1">
                 $('#input-1').html('');
                 $('#output-1').html('');
             });
+            function download() {
+                var a = document.body.appendChild(document.createElement("a"));
+                a.download = "menu.yml";
+                a.href = "data:text/html," + document.getElementById("output").innerText;
+                a.click();
+            }
         </script>
         <script>
             $('#menu-type-selector').change(function () {
@@ -190,7 +204,7 @@ items: <span class="items"><span id="1">
                    $('#amount').remove();
                    $('#permission').remove();
                    $('#type-name').html('Permission ');
-                   $('#menu-type').after("\n      <span id=\"permission\">permission: <span id=\"menu-handler\">");
+                   $('#menu-type').after("\n          <span id=\"permission\">permission: <span id=\"menu-handler\">");
                    $('#input-1').html('');
                    $('#output-1').html('');
                }
