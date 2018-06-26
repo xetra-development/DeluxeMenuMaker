@@ -95,6 +95,11 @@ items: <span class="items"><span id="1">
                         <option value="string contains">string contains</option>
                         <option value="string equals">string equals</option>
                         <option value="stringequalsignorecase">stringequalsignorecase</option>
+						<option value="'>'">></option>
+                        <option value="'>='">>=</option>
+                        <option value="'=='">==</option>
+                        <option value="'<='"><=</option>
+                        <option value="'<'"><</option>
                     </select>
                 </div>
                 <br>
@@ -209,6 +214,36 @@ items: <span class="items"><span id="1">
                     $('#output-1').html('output:');
                 }
                 if (value == "stringequalsignorecase") {
+                    $('#amount').remove();
+                    $('#permission').remove();
+                    $('#input-1').html('input:');
+                    $('#output-1').html('output:');
+                }
+                if (value == ">") {
+                    $('#amount').remove();
+                    $('#permission').remove();
+                    $('#input-1').html('input:');
+                    $('#output-1').html('output:');
+                }
+                if (value == ">=") {
+                    $('#amount').remove();
+                    $('#permission').remove();
+                    $('#input-1').html('input:');
+                    $('#output-1').html('output:');
+                }
+                if (value == "==") {
+                    $('#amount').remove();
+                    $('#permission').remove();
+                    $('#input-1').html('input:');
+                    $('#output-1').html('output:');
+                }
+                if (value == "<=") {
+                    $('#amount').remove();
+                    $('#permission').remove();
+                    $('#input-1').html('input:');
+                    $('#output-1').html('output:');
+                }
+                if (value == "<") {
                     $('#amount').remove();
                     $('#permission').remove();
                     $('#input-1').html('input:');
