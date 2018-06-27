@@ -70,6 +70,10 @@ pre, code {
 	z-index: 999;
 }
 
+label {
+	padding-right: 10px;
+}
+
 @media screen and (max-width: 992px) {
 	.overlay {
 		display: block;
