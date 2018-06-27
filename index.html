@@ -35,6 +35,7 @@ open_requirement:
   requirements:
     <span id="menu-requirement-name">anythinghere</span>:
       type: <span id="menu-type"></span>
+	  deny_commands: <span id="deny-commands">[]</span>
       <span id="input-1">input:</span> '<span id="input-1-info"></span>'
       <span id="output-1">output:</span> <span id="output-1-info"></span>
 items: <span class="items"><span id="1">
@@ -109,6 +110,11 @@ items: <span class="items"><span id="1">
                     <label><span id="type-name"></span></label>
                     <input class="form-control" type="text" id="menu-handler_keyup" value="" />
                 </div>
+				<br>
+				<div class="input-group">
+					<label>Deny Commands</label>
+					<textarea class="form-control" id="deny-commands_keyup" placeholder="[close]"></textarea>
+				</div>
                 <br>
                 <div class="input-group">
                     <label><span id="input-1-label">Input (Do not touch unless required)</span></label>
