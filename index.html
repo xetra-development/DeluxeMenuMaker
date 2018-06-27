@@ -27,27 +27,25 @@
 			<h2>DeluxeMenuMaker does not currently support mobile devices.</h2>
 		</div>
 		
-<pre><code>gui_menus:
-  <span id="menu-name">menuname</span>:
-    menu_title: '<span id="menu-title">&bAwesome Menu</span>'
-    open_command: <span id="menu-open-command">menu</span>
-    size: <span id="menu-size">9</span>
-    update_interval: <span id="menu-update-interval">1</span>
-    open_requirement:
-      requirements:
-        <span id="menu-requirement-name">anythinghere</span>:
-          type: <span id="menu-type"></span>
-          <span id="input-1">input:</span> '<span id="input-1-info"></span>'
-          <span id="output-1">output:</span> <span id="output-1-info"></span>
-    items: <span class="items"><span id="1">
-      '<span id="item-1-name">1</span>':
-        material: <span id="item-1-material">IRON_SWORD</span>
-        slot: <span id="item-1-slot">1</span>
-        display_name: '<span id="item-1-display-name">&fIron Sword</span>'
-        lore: <span id="item-1-lore">[]</span>
-        left_click_commands: <span id="item-1-left-click-commands">[]</span>
-        right_click_commands: <span id="item-1-right-click-commands">[]</span>
-        update: <span id="item-1-update">true</span></span></span>
+<pre><code>menu_title: '<span id="menu-title">&bAwesome Menu</span>'
+open_command: <span id="menu-open-command">menu</span>
+size: <span id="menu-size">9</span>
+update_interval: <span id="menu-update-interval">1</span>
+open_requirement:
+  requirements:
+    <span id="menu-requirement-name">anythinghere</span>:
+      type: <span id="menu-type"></span>
+      <span id="input-1">input:</span> '<span id="input-1-info"></span>'
+      <span id="output-1">output:</span> <span id="output-1-info"></span>
+items: <span class="items"><span id="1">
+  '<span id="item-1-name">1</span>':
+    material: <span id="item-1-material">IRON_SWORD</span>
+    slot: <span id="item-1-slot">1</span>
+    display_name: '<span id="item-1-display-name">&fIron Sword</span>'
+    lore: <span id="item-1-lore">[]</span>
+    left_click_commands: <span id="item-1-left-click-commands">[]</span>
+    right_click_commands: <span id="item-1-right-click-commands">[]</span>
+    update: <span id="item-1-update">true</span></span></span>
 		</code></pre>
 	
 		<div id="output"></div>
@@ -66,11 +64,6 @@
 				Menu
 			</div>
 			<div class="menu">
-                <div class="input-group">
-                    <label>Menu Name</label>
-                    <input class="form-control" type="text" id="menu-name_keyup" value="menuname" />
-                </div>
-                <br>
 				<div class="input-group">
 					<label>Title</label>
 					<input class="form-control" type="text" id="menu-title_keyup" value="&bAwesome Menu"  data-step="3" data-intro="Changes made to the menu and items will automatically apply to your configuration on the left." />
