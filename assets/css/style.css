@@ -74,7 +74,7 @@ label {
 	padding-right: 10px;
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 800px) {
 	.overlay {
 		display: block;
 	}
